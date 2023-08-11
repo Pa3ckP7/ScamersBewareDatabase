@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scamers beware database</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/lookup.js"></script>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">SBD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active">Lookup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="info.html">Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="api.html">API</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid pt-5">
+    <div>
+      <h1 class="text-center">Scammers beware Database Lookup</h1>
+      <p class="text-center">Lookup a user ID</p>
+    </div>
+
+    <div class="container">
+      <h2 class="text-center py-2">Warning</h2>
+      <p>This database is not complete and 100% accurate. There is a likelyhood that even if the user ID is not present
+        in the database that the user is a scammer. Likewise a user in the database may not actually be a scammer, but
+        was missindentified as one</p>
+    </div>
+    <div class="container lookup-container">
+      <form onsubmit="lookup(event)" class="row">
+        <div class="col-auto">
+          <input type="text" pattern="[0-9]*" class="form-control" id="UserID" placeholder="UserID"
+            required>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Lookup</button>
+        </div>
+      </form>
+    </div>
+    <div class="container" style="display:none" id="LookupResults">
+      <div class="row">
+        <p class="col-6">UserID:</p>
+        <p class="col-6" id="rUID"></p>
+      
+        <p class="col-6">Known Usernames:</p>
+        <p class="col-6" id="rUName"></p>
+      
+        <p class="col-6">Known Displaynames:</p>
+        <p class="col-6" id="rDName"></p>
+
+        <p class="col-6">Reporting Server:</p>
+        <p class="col-6" id="rServer"></p>
+
+        <p class="col-6">Reported Date:</p>
+        <p class="col-6" id="rDate"></p>
+
+        <div onclick="toggle('rTrToggle')">Transcript</div>
+        <div style ="display: none" id="rTrToggle">
+          <pre id="rTranscript">
+
+          </pre>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
